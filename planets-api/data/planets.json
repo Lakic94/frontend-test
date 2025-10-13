@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "planetName": "Mercury",
+    "planetColor": "Orange",
+    "planetRadiusKM": 2340,
+    "distInMillionsKM": {
+      "fromSun": 57.91,
+      "fromEarth": 91.69
+    },
+    "description": "Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 days, the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger of the gods.",
+    "imageUrl": "https://storage.googleapis.com/planets-fr.appspot.com/mercury.jpg",
+    "imageName": "mercury.jpg"
+  },
+  {
+    "id": 2,
+    "planetName": "Venus",
+    "planetColor": "White",
+    "planetRadiusKM": 6100,
+    "distInMillionsKM": {
+      "fromSun": 108.21,
+      "fromEarth": 41.39
+    },
+    "description": "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the second-brightest natural object in the night sky after the Moon, Venus can cast shadows and can be, on rare occasion, visible to the naked eye in broad daylight.",
+    "imageUrl": "https://storage.googleapis.com/planets-fr.appspot.com/venus.gif",
+    "imageName": "venus.gif"
+  },
+  {
+    "id": 3,
+    "planetName": "Earth",
+    "planetColor": "Blue",
+    "planetRadiusKM": 6371,
+    "distInMillionsKM": {
+      "fromSun": 149.6,
+      "fromEarth": 0
+    },
+    "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life. According to radiometric dating estimation and other evidence, Earth formed over 4.5 billion years ago.",
+    "imageUrl": "https://storage.googleapis.com/planets-fr.appspot.com/earth.png",
+    "imageName": "earth.jpg"
+  },
+  {
+    "id": 4,
+    "planetName": "Mars",
+    "planetColor": "Red",
+    "planetRadiusKM": 3324,
+    "distInMillionsKM": {
+      "fromSun": 227.9,
+      "fromEarth": 78.3
+    },
+    "description": "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being only larger than Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the 'Red Planet'.",
+    "imageUrl": "https://storage.googleapis.com/planets-fr.appspot.com/mars.gif",
+    "imageName": "mars.gif"
+  },
+  {
+    "id": 5,
+    "planetName": "Jupiter",
+    "planetColor": "Yellow",
+    "planetRadiusKM": 69750,
+    "distInMillionsKM": {
+      "fromSun": 778.3,
+      "fromEarth": 628.7
+    },
+    "description": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined.",
+    "imageUrl": "https://storage.googleapis.com/planets-fr.appspot.com/jupiter.png",
+    "imageName": "jupiter.png"
+  },
+  {
+    "id": 6,
+    "planetName": "Saturn",
+    "planetColor": "Yellow",
+    "planetRadiusKM": 58170,
+    "distInMillionsKM": {
+      "fromSun": 1428,
+      "fromEarth": 1278.4
+    },
+    "description": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine times that of Earth. It only has one-eighth the average density of Earth; however, with its larger volume, Saturn is over 95 times more massive.",
+    "imageUrl": "https://storage.googleapis.com/planets-fr.appspot.com/saturn.png",
+    "imageName": "saturn.png"
+  },
+  {
+    "id": 7,
+    "planetName": "Uranus",
+    "planetColor": "Yellow",
+    "planetRadiusKM": 23750,
+    "distInMillionsKM": {
+      "fromSun": 2872,
+      "fromEarth": 2722.4
+    },
+    "description": "Uranus is the seventh planet from the Sun. The name 'Uranus' is a reference to the Greek god of the sky, Uranus. According to Greek mythology, Uranus was the grandfather of Zeus and father of Cronus. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
+    "imageUrl": "https://storage.googleapis.com/planets-fr.appspot.com/uranus.png",
+    "imageName": "uranus.png"
+  },
+  {
+    "id": 8,
+    "planetName": "Neptune",
+    "planetColor": "Purple",
+    "planetRadiusKM": 22400,
+    "distInMillionsKM": {
+      "fromSun": 4498,
+      "fromEarth": 4348.4
+    },
+    "description": "Neptune is the eighth and farthest-known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth, slightly more massive than its near-twin Uranus.",
+    "imageUrl": "https://storage.googleapis.com/planets-fr.appspot.com/neptune.png",
+    "imageName": "neptune.png"
+  }
+]
