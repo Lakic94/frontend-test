@@ -1,0 +1,102 @@
+.planet-form-dialog {
+    max-width: 90vw;
+}
+
+.planet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    flex: 1;
+}
+
+mat-form-field {
+    font-size: 14px;
+}
+
+/* Image Upload Styles */
+.image-upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.file-upload-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-btn {
+    border: 1px solid #125169;
+    color: #125169;
+    background-color: #595f60;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+.image-error {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.cancel-btn {
+    color: #666;
+    background-color: transparent;
+    border: 1px solid #ddd;
+
+    &:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+.submit-btn {
+    background-color: #011f49;
+    color: white;
+
+    &:disabled {
+        background-color: #ccc;
+        color: #999;
+    }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .planet-form-dialog {
+        width: 95vw;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .half-width {
+        width: 100%;
+    }
+}

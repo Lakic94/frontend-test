@@ -1,0 +1,178 @@
+<div class="planets-container">
+    <div class="page-header">
+        <div class="page-title">Planets</div>
+        <div class="page-controls">
+            <div class="view-toggle-group">
+                <button
+                    class="view-toggle-btn"
+                    [class.active]="planetStateService.viewMode() === 'grid'"
+                    (click)="changeViewMode('grid')"
+                    matTooltip="Grid View"
+                    aria-label="Grid view"
+                >
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect
+                            x="4"
+                            y="4"
+                            width="7"
+                            height="7"
+                            rx="1"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'grid'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                        <rect
+                            x="13"
+                            y="4"
+                            width="7"
+                            height="7"
+                            rx="1"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'grid'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                        <rect
+                            x="4"
+                            y="13"
+                            width="7"
+                            height="7"
+                            rx="1"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'grid'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                        <rect
+                            x="13"
+                            y="13"
+                            width="7"
+                            height="7"
+                            rx="1"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'grid'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                    </svg>
+                </button>
+                <button
+                    class="view-toggle-btn"
+                    [class.active]="planetStateService.viewMode() === 'table'"
+                    (click)="changeViewMode('table')"
+                    matTooltip="Table View"
+                    aria-label="List view"
+                >
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect
+                            x="10"
+                            y="6"
+                            width="10"
+                            height="2"
+                            rx="1"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'table'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                        <rect
+                            x="10"
+                            y="11"
+                            width="10"
+                            height="2"
+                            rx="1"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'table'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                        <rect
+                            x="10"
+                            y="16"
+                            width="10"
+                            height="2"
+                            rx="1"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'table'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                        <circle
+                            cx="6"
+                            cy="7"
+                            r="1.5"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'table'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                        <circle
+                            cx="6"
+                            cy="12"
+                            r="1.5"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'table'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                        <circle
+                            cx="6"
+                            cy="17"
+                            r="1.5"
+                            [attr.fill]="
+                                planetStateService.viewMode() === 'table'
+                                    ? '#ffffff'
+                                    : '#125169'
+                            "
+                        />
+                    </svg>
+                </button>
+            </div>
+            <input
+                type="text"
+                placeholder="Search"
+                matInput
+                [formControl]="searchTermFormControl"
+            />
+            <button
+                mat-button
+                class="new-planet-btn"
+                style="color: #ffffff"
+                (click)="onCreatePlanet()"
+            >
+                New Planet
+            </button>
+        </div>
+    </div>
+    <div class="planets-content">
+        @if (planetStateService.viewMode() === 'table') {
+        <app-planet-table-view
+            (sortChange)="onSortChange($event)"
+        ></app-planet-table-view>
+        } @else {
+        <app-planet-grid-view></app-planet-grid-view>
+        }
+    </div>
+</div>

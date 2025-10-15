@@ -1,0 +1,37 @@
+<div class="confirmation-dialog">
+    <svg
+        width="65"
+        height="62"
+        viewBox="0 0 65 62"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M32.3636 1C15.0427 1 1 12.5991 1 26.9091C1.07275 30.4718 1.94355 33.9729 3.54831 37.1545C5.15306 40.3362 7.45092 43.1175 10.2727 45.2936L3.72727 61L21.1055 51.07C24.7458 52.2287 28.5433 52.8184 32.3636 52.8182C49.6845 52.8182 63.7273 41.2191 63.7273 26.9091C63.7273 12.5991 49.6845 1 32.3636 1Z"
+            stroke="#242626"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+        <path
+            d="M32.3638 31.0027V11.9118"
+            stroke="#242626"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+        <path
+            d="M32.3635 37.1363C32.4983 37.1363 32.6301 37.1763 32.7423 37.2512C32.8544 37.3261 32.9418 37.4326 32.9934 37.5572C33.045 37.6818 33.0585 37.8189 33.0322 37.9512C33.0059 38.0834 32.9409 38.2049 32.8456 38.3003C32.7502 38.3956 32.6287 38.4605 32.4965 38.4869C32.3642 38.5132 32.2271 38.4997 32.1025 38.4481C31.978 38.3965 31.8715 38.3091 31.7965 38.1969C31.7216 38.0848 31.6816 37.953 31.6816 37.8181C31.6816 37.6373 31.7535 37.4639 31.8813 37.336C32.0092 37.2082 32.1826 37.1363 32.3635 37.1363Z"
+            stroke="#242626"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </svg>
+    <p class="confirmation-dialog-title">{{ data.title }}</p>
+    <p class="confirmation-dialog-message" [innerHTML]="data.message"></p>
+    <div class="confirmation-dialog-buttons">
+        <button mat-button (click)="onConfirm()" class="confirm-btn">Confirm</button>
+        <button mat-button (click)="onCancel()" class="cancel-btn">Cancel</button>
+    </div>
+</div>

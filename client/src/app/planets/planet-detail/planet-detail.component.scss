@@ -1,0 +1,179 @@
+.planet-detail-container {
+    min-height: 100vh;
+    background-color: #eceff4;
+}
+
+.planet-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.planet-info-section {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: #ffffff;
+}
+
+.planet-image-container {
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.planet-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.planet-text-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.planet-name {
+    font-size: 36px;
+    font-weight: 600;
+    color: #242626;
+}
+
+.planet-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+.planet-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    align-content: start;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-card-wide {
+    grid-column: span 3;
+}
+
+.stat-card-narrow {
+    grid-column: span 2;
+}
+
+.stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #242626;
+}
+
+.planet-not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    font-size: 18px;
+    color: #666;
+}
+
+.delete-planet-btn {
+    background-color: #011f49;
+    color: #ffffff;
+}
+
+.edit-planet-btn {
+    background-color: #d0dce1;
+    color: #125169;
+}
+
+@media (max-width: 1024px) {
+    .planet-detail-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .planet-stats-grid {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .planet-detail-content {
+        padding: 20px;
+        gap: 24px;
+    }
+
+    .planet-info-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .planet-image {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .planet-name {
+        font-size: 28px;
+    }
+
+    .planet-stats-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 20px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .planet-detail-content {
+        padding: 16px;
+    }
+
+    .planet-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .planet-name {
+        font-size: 24px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+}

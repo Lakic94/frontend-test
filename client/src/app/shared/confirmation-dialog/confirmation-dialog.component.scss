@@ -1,0 +1,47 @@
+.confirmation-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 24px;
+    min-height: auto;
+    box-sizing: border-box;
+}
+
+.confirmation-dialog-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #242626;
+    margin: 0;
+    text-align: center;
+}
+
+.confirmation-dialog-message {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+    
+    strong {
+        color: #242626;
+        font-weight: 600;
+    }
+}
+
+.confirmation-dialog-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.confirm-btn {
+    background-color: #011f49;
+    color: white;
+}
+
+.cancel-btn {
+    color: #666;
+    background-color: transparent;
+    border: 1px solid #ddd;
+}

@@ -1,0 +1,193 @@
+<div class="planet-form-dialog">
+    <h2 mat-dialog-title>{{ title }}</h2>
+
+    <mat-dialog-content>
+        <form [formGroup]="planetForm" class="planet-form">
+            <div class="form-row">
+                <div class="image-upload-section full-width">
+                    <div class="file-upload-container">
+                        <button
+                            type="button"
+                            mat-button
+                            (click)="fileInput.click()"
+                            class="upload-btn"
+                            style="color: #ffffff"
+                        >
+                            Browse...
+                        </button>
+                        <span *ngIf="selectedFile" class="file-name">{{
+                            selectedFile.name
+                        }}</span>
+                        <input
+                            type="file"
+                            accept="image/*"
+                            (change)="onFileSelected($event)"
+                            #fileInput
+                            class="file-input"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <mat-form-field
+                    appearance="outline"
+                    class="full-width"
+                    floatLabel="always"
+                >
+                    <mat-label>Planet Name</mat-label>
+                    <input
+                        matInput
+                        formControlName="planetName"
+                        placeholder="Enter planet name"
+                    />
+                    <mat-error
+                        *ngIf="
+                            planetForm.get('planetName')?.hasError('required')
+                        "
+                    >
+                        Planet name is required
+                    </mat-error>
+                    <mat-error
+                        *ngIf="
+                            planetForm.get('planetName')?.hasError('minlength')
+                        "
+                    >
+                        Planet name must be at least 2 characters
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Description</mat-label>
+                    <textarea
+                        matInput
+                        formControlName="description"
+                        rows="4"
+                        placeholder="Enter planet description"
+                    ></textarea>
+                    <mat-error
+                        *ngIf="
+                            planetForm.get('description')?.hasError('required')
+                        "
+                    >
+                        Description is required
+                    </mat-error>
+                    <mat-error
+                        *ngIf="
+                            planetForm.get('description')?.hasError('minlength')
+                        "
+                    >
+                        Description must be at least 10 characters
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="half-width">
+                    <mat-label>Radius (km)</mat-label>
+                    <input
+                        matInput
+                        type="number"
+                        formControlName="planetRadiusKM"
+                        placeholder="Enter radius"
+                    />
+                    <mat-error
+                        *ngIf="
+                            planetForm
+                                .get('planetRadiusKM')
+                                ?.hasError('required')
+                        "
+                    >
+                        Radius is required
+                    </mat-error>
+                    <mat-error
+                        *ngIf="
+                            planetForm.get('planetRadiusKM')?.hasError('min')
+                        "
+                    >
+                        Radius must be greater than 0
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="half-width">
+                    <mat-label>Planet Color</mat-label>
+                    <input
+                        matInput
+                        formControlName="planetColor"
+                        placeholder="e.g., Blue, Red"
+                    />
+                    <mat-error
+                        *ngIf="
+                            planetForm.get('planetColor')?.hasError('required')
+                        "
+                    >
+                        Planet color is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="half-width">
+                    <mat-label>Distance from Sun (M km)</mat-label>
+                    <input
+                        matInput
+                        type="number"
+                        formControlName="distFromSun"
+                        placeholder="Enter distance"
+                    />
+                    <mat-error
+                        *ngIf="
+                            planetForm.get('distFromSun')?.hasError('required')
+                        "
+                    >
+                        Distance from Sun is required
+                    </mat-error>
+                    <mat-error
+                        *ngIf="planetForm.get('distFromSun')?.hasError('min')"
+                    >
+                        Distance must be 0 or greater
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="half-width">
+                    <mat-label>Distance from Earth (M km)</mat-label>
+                    <input
+                        matInput
+                        type="number"
+                        formControlName="distFromEarth"
+                        placeholder="Enter distance"
+                    />
+                    <mat-error
+                        *ngIf="
+                            planetForm
+                                .get('distFromEarth')
+                                ?.hasError('required')
+                        "
+                    >
+                        Distance from Earth is required
+                    </mat-error>
+                    <mat-error
+                        *ngIf="planetForm.get('distFromEarth')?.hasError('min')"
+                    >
+                        Distance must be 0 or greater
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="center">
+        <button
+            mat-button
+            (click)="onSubmit()"
+            [disabled]="!isFormValid()"
+            class="submit-btn"
+        >
+            {{ submitButtonText }}
+        </button>
+        <button mat-button (click)="onCancel()" class="cancel-btn">
+            Cancel
+        </button>
+    </mat-dialog-actions>
+</div>

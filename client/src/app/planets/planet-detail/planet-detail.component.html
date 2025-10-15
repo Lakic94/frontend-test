@@ -1,0 +1,53 @@
+<div class="planet-detail-container">
+    <div class="page-header">
+        <div class="page-title">{{ planet()?.planetName }}</div>
+        <div class="page-controls">
+            <button mat-button class="edit-planet-btn" style="color: #125169;" (click)="onEditPlanet()">Edit Planet</button>
+            <button mat-button class="delete-planet-btn" style="color: #ffffff;" (click)="onDeletePlanet()">Delete Planet</button>
+        </div>
+    </div>
+
+    @if (planet()) {
+    <div class="planet-detail-content">
+        <div class="planet-info-section">
+            <div class="planet-image-container">
+                <img 
+                    [src]="planet()!.imageUrl" 
+                    [alt]="planet()!.planetName"
+                    class="planet-image"
+                />
+            </div>
+            <div class="planet-text-info">
+                <h1 class="planet-name">{{ planet()!.planetName }}</h1>
+                <p class="planet-description">{{ planet()!.description }}</p>
+            </div>
+        </div>
+
+        <div class="planet-stats-grid">
+            <div class="stat-card stat-card-wide">
+                <div class="stat-value">{{ planet()!.planetRadiusKM | number }}</div>
+                <div class="stat-label">Radius in km</div>
+            </div>
+            
+            <div class="stat-card stat-card-narrow">
+                <div class="stat-value">{{ planet()!.distInMillionsKM.fromSun | number }}</div>
+                <div class="stat-label">Dist. from Sun</div>
+            </div>
+            
+            <div class="stat-card stat-card-wide">
+                <div class="stat-value">{{ planet()!.planetColor }}</div>
+                <div class="stat-label">Color</div>
+            </div>
+            
+            <div class="stat-card stat-card-narrow">
+                <div class="stat-value">{{ planet()!.distInMillionsKM.fromEarth | number }}</div>
+                <div class="stat-label">Dist. from Earth</div>
+            </div>
+        </div>
+    </div>
+    } @else {
+    <div class="planet-not-found">
+        <p>Planet not found</p>
+    </div>
+    }
+</div>

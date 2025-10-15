@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-title {
+    font-size: 38px;
+    font-weight: bold;
+    color: #242626;
+}
+
+.page-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mat-mdc-button {
+    width: 120px !important;
+    height: 40px !important;
+    border-radius: 4px !important;
+    padding: 10px 12px !important;
+}
+
+.mat-mdc-dialog-container {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.mat-mdc-dialog-content {
+    overflow: visible !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
