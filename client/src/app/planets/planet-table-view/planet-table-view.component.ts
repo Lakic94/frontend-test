@@ -5,6 +5,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { PlanetStateService } from '../services/planet-state.service';
 import { Planet } from '../model/planet.interface';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-planet-table-view',
@@ -29,6 +30,11 @@ export class PlanetTableViewComponent {
         'distInMillionsKM.fromEarth',
     ];
     dataSource: MatTableDataSource<Planet> = new MatTableDataSource<Planet>();
+    private router = inject(Router);
 
     @Output() sortChange = new EventEmitter<Sort>();
+
+    onRowClick(row: Planet) {
+        this.router.navigate(['/planets', row.id]);
+    }
 }

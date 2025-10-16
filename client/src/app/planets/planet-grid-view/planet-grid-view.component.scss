@@ -2,13 +2,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
-    grid-auto-rows: minmax(500px, auto); /* Set minimum row height */
+    grid-auto-rows: minmax(500px, auto);
     width: 100%;
     max-width: 1400px;
     padding: 20px 0;
     box-sizing: border-box;
 
-    /* Your existing responsive breakpoints... */
     @media (min-width: 1200px) {
         grid-template-columns: repeat(4, 1fr);
     }

@@ -27,7 +27,6 @@ mat-form-field {
     font-size: 14px;
 }
 
-/* Image Upload Styles */
 .image-upload-section {
     display: flex;
     flex-direction: column;
@@ -85,7 +84,6 @@ mat-form-field {
     }
 }
 
-// Responsive design
 @media (max-width: 768px) {
     .planet-form-dialog {
         width: 95vw;

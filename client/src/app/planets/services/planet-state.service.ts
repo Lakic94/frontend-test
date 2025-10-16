@@ -6,7 +6,7 @@ import {
     PlanetFormDialogComponent,
     PlanetFormDialogData,
 } from '../shared/planet-form-dialog/planet-form-dialog.component';
-import { mergeMap, filter, tap, Observable } from 'rxjs';
+import { mergeMap, filter, tap, map, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/confirmation-dialog.component';
 import { ConfirmationDialogData } from '../../shared/model/confirmation-dialog';
@@ -136,22 +136,41 @@ export class PlanetStateService {
     }
 
     openEditPlanetDialog(planet: Planet): void {
-        const dialogRef = this.dialog.open(PlanetFormDialogComponent, {
-            width: '600px',
-            data: { mode: 'edit', planet } as PlanetFormDialogData,
-        });
+        const confirmationData: ConfirmationDialogData = {
+            title: 'Confirm edit',
+            message: `Are you sure you want to edit <strong>${planet.planetName}</strong>?`,
+        };
 
-        dialogRef
+        this.dialog
+            .open(PlanetFormDialogComponent, {
+                width: '600px',
+                data: { mode: 'edit', planet } as PlanetFormDialogData,
+            })
             .afterClosed()
             .pipe(
-                filter((result) => result?.action === 'confirm'),
-                mergeMap((result) =>
-                    this.planetApiService.updatePlanet(
-                        result.planetId,
-                        result.data,
-                        result.file
-                    )
-                ),
+                filter((formResult) => formResult?.action === 'confirm'),
+                mergeMap((formResult) => {
+                    return this.dialog
+                        .open(ConfirmationDialogComponent, {
+                            width: '500px',
+                            data: confirmationData,
+                        })
+                        .afterClosed()
+                        .pipe(
+                            map((confirmResult) => ({
+                                formResult,
+                                confirmResult,
+                            }))
+                        );
+                }),
+                filter(({ confirmResult }) => confirmResult === true),
+                mergeMap(({ formResult }) => {
+                    return this.planetApiService.updatePlanet(
+                        formResult.planetId,
+                        formResult.data,
+                        formResult.file
+                    );
+                }),
                 tap(() => {
                     this.loadPlanets();
                     this.router.navigate(['/planets']);
